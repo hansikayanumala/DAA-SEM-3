@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    
+    cout << "Enter number of stairs: ";
+    cin >> n;
+
+    int dp[100];
+
+    dp[0] = 1;
+    dp[1] = 1;
+
+    for(int i = 2; i <= n; i++)
+    {
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+
+    cout << "Number of ways = " << dp[n];
+
+    return 0;
+}
